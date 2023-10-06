@@ -1,0 +1,5 @@
+[33m91e4955[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{2023-10-06 23:57:43 +0700}: reset: moving to 91e49556fd1c36c5d0aba2cf4b2ea6f3d9e75bc7
+[33m699b6e0[m HEAD@{2023-10-06 23:57:33 +0700}: reset: moving to 699b6e044dab31a3e423f9ead39d5d56ba1648d8
+[33m313e6da[m HEAD@{2023-10-06 23:57:20 +0700}: revert: Revert "first commit"
+[33m699b6e0[m HEAD@{2023-10-06 23:55:21 +0700}: commit: first commit
+[33m91e4955[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{2023-09-20 02:26:01 +0700}: commit (initial): first commit
