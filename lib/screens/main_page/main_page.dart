@@ -1,13 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:sg_grocery/base/app_images.dart';
+import 'package:sg_grocery/base/app_string.dart';
 import 'package:sg_grocery/screens/home/home_page.dart';
-import '../../base/app_colors/app_colors.dart';
+import '../../base/app_colors.dart';
 import '../account/account_page.dart';
 import '../cart/cart_page.dart';
 import '../explore/explore_page.dart';
 import '../fav/fav_page.dart';
-//import 'package:sg_grocery/screens/splash/splash.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -37,7 +37,7 @@ class _MainPage extends State<MainPage> {
       bottomNavigationBar: SizedBox(
         height: 72,
         child: BottomNavigationBar(
-          backgroundColor: AppColor.colorBottomNavigator,
+          backgroundColor: AppColor.color_85_171_96_1,
           type: BottomNavigationBarType.fixed,
           selectedItemColor: Colors.white,
           unselectedItemColor: Colors.grey,
@@ -52,19 +52,19 @@ class _MainPage extends State<MainPage> {
           items: [
             BottomNavigationBarItem(
                 icon: _iconBottomNav(checkIndex: selectedPage, icon: listIconBottomNav[0], indexItem: 0 ),
-                label: "Home"),
+                label: AppString.textHome),
             BottomNavigationBarItem(
                 icon: _iconBottomNav(checkIndex: selectedPage, icon: listIconBottomNav[1], indexItem: 1),
-                label: "Explore"),
+                label: AppString.textExplore),
             BottomNavigationBarItem(
                 icon: _iconBottomNav(checkIndex: selectedPage, icon: listIconBottomNav[2], indexItem: 2),
-                label: "Cart"),
+                label: AppString.textCart),
             BottomNavigationBarItem(
                 icon: _iconBottomNav(checkIndex: selectedPage, icon: listIconBottomNav[3],indexItem: 3),
-                label: "FAV"),
+                label: AppString.textFAV),
             BottomNavigationBarItem(
                 icon: _iconBottomNav(checkIndex: selectedPage, icon: listIconBottomNav[4], indexItem: 4),
-                label: "Account"),
+                label: AppString.textAccount),
           ],
         ),
       ),
@@ -74,14 +74,14 @@ class _MainPage extends State<MainPage> {
     //checkItem = 0 ;
     if (checkIndex == indexItem) {
       return Container(
-          padding: EdgeInsets.all(6),
+          padding: const EdgeInsets.all(6),
           height: 40,
           width: 40,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12), color: Colors.white
           ),
           child: SvgPicture.asset(icon,
-            color: AppColor.colorBottomNavigator,
+            color: AppColor.color_85_171_96_1,
           ));
     } else {
       return SvgPicture.asset(icon);
@@ -89,10 +89,10 @@ class _MainPage extends State<MainPage> {
   }
 }
 List<String> listIconBottomNav =[
-  "assets/svg/ic_home.svg",
-  "assets/svg/ic_explore.svg",
-  "assets/svg/ic_cart.svg",
-  "assets/svg/ic_fav.svg",
-  "assets/svg/ic_account.svg",
+  AppImage.icHome,
+  AppImage.icExplore,
+  AppImage.icCart,
+  AppImage.icFAV,
+  AppImage.icAccount
 ];
 

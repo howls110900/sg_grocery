@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../base/app_colors/app_colors.dart';
-import '../../base/app_fonts/app_fonts.dart';
+import '../../base/app_colors.dart';
+import '../../base/app_fonts.dart';
 
 class ExploreProducts extends StatelessWidget{
   final List list;
@@ -25,7 +25,7 @@ class ExploreProducts extends StatelessWidget{
                 margin: const EdgeInsets.only(right: 12),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
-                    color: AppColor.colorBackGroundExplore
+                    color: AppColor.color_242_252_244_1
                     //color: Colors.orangeAccent
                 ),
                 width: 116,

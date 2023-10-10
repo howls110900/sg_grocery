@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../base/app_colors/app_colors.dart';
-import '../../base/app_fonts/app_fonts.dart';
+import '../../base/app_colors.dart';
+import '../../base/app_fonts.dart';
 
 class DividerLine extends StatelessWidget {
   final String text;
@@ -15,7 +15,7 @@ class DividerLine extends StatelessWidget {
         Expanded(
             child: Container(
           child: const Divider(
-            color: AppColor.hintTextButton,
+            color: AppColor.color_133_143_173_1,
           ),
         )),
         const SizedBox(
@@ -31,7 +31,7 @@ class DividerLine extends StatelessWidget {
         Expanded(
             child: Container(
           child: const Divider(
-            color: AppColor.hintTextButton,
+            color: AppColor.color_133_143_173_1,
           ),
         )),
       ],

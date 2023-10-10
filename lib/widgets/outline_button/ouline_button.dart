@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../base/app_colors/app_colors.dart';
-import '../../base/app_fonts/app_fonts.dart';
+import '../../base/app_colors.dart';
+import '../../base/app_fonts.dart';
 
 class OutlineAppButton extends StatelessWidget{
   final SvgPicture svg ;
@@ -23,7 +23,7 @@ class OutlineAppButton extends StatelessWidget{
         ),
       style: OutlinedButton.styleFrom(
         side: const BorderSide(
-          width: 1.0, color: AppColor.colorGreen,
+          width: 1.0, color: AppColor.color_85_171_96_1,
         ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),

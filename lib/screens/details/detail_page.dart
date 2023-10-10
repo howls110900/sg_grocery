@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../base/app_colors/app_colors.dart';
+import '../../base/app_colors.dart';
 
 class DetailsPage extends StatefulWidget {
   const DetailsPage({super.key});

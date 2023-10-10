@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:sg_grocery/data/bakery_items/bakery_item.dart';
-import 'package:sg_grocery/data/groceries_products/groceries_product.dart';
-import 'package:sg_grocery/data/vegetables/vegetables.dart';
+import 'package:sg_grocery/base/app_images.dart';
+import 'package:sg_grocery/base/app_string.dart';
 import 'package:sg_grocery/screens/fruits/fruits.dart';
 import 'package:sg_grocery/widgets/explore_products/explore_products.dart';
 import 'package:sg_grocery/widgets/home_title_products/home_title_products.dart';
-import '../../base/app_colors/app_colors.dart';
-import '../../base/app_fonts/app_fonts.dart';
-import '../../data/dairy_products/dairy_products.dart';
-import '../../data/fruits_explore/fruits_explore.dart';
+import '../../base/app_colors.dart';
+import '../../base/app_fonts.dart';
+import '../../data/mock/bakery_items/bakery_item.dart';
+import '../../data/mock/dairy_products/dairy_products.dart';
+import '../../data/mock/fruits_explore/fruits_explore.dart';
+import '../../data/mock/groceries_products/groceries_product.dart';
+import '../../data/mock/vegetables/vegetables.dart';
 
 class ExplorePage extends StatefulWidget {
   const ExplorePage({super.key});
@@ -22,7 +24,7 @@ class _ExplorePageState extends State<ExplorePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            backgroundColor: AppColor.backGroundWhite,
+            backgroundColor: AppColor.color_255_255_255_1,
             elevation: 0,
             leadingWidth: 40,
             leading: IconButton(
@@ -33,11 +35,11 @@ class _ExplorePageState extends State<ExplorePage> {
                       //     //     builder: (context) => const MainPage())
                       //    ),
                     },
-                icon: SvgPicture.asset('assets/svg/back_button.svg')),
+                icon: SvgPicture.asset(AppImage.backButton)),
             centerTitle: true,
             title: Container(
               child: const Text(
-                'Explore',
+                AppString.textExplore,
                 style: AppFont.TextTitleExplorePageStyle,
               ),
             )),
@@ -46,29 +48,29 @@ class _ExplorePageState extends State<ExplorePage> {
           children: [
             Container(
                 margin: const EdgeInsets.only(left: 16, right: 8, bottom: 8),
-                child:  TitleProducts(
-                  title: 'Groceries',
-                  text: 'See all',
+                child: TitleProducts(
+                  title: AppString.textGroceries,
+                  text: AppString.textSeeAll,
                   fontWeight: FontWeight.w700,
-                  onClickButton: (){},
+                  onClickButton: () {},
                 )),
             ExploreProducts(list: listGroceriesProduct),
             Container(
                 margin: const EdgeInsets.only(left: 14, right: 8, bottom: 8),
                 child: TitleProducts(
-                  title: 'Vegetables',
-                  text: 'See all',
+                  title: AppString.textVegetables,
+                  text: AppString.textSeeAll,
                   fontWeight: FontWeight.w700,
-                  onClickButton: (){},
+                  onClickButton: () {},
                 )),
             ExploreProducts(list: listVegetables),
             Container(
                 margin: const EdgeInsets.only(left: 14, right: 8, bottom: 8),
                 child: TitleProducts(
-                  title: 'Fruits',
-                  text: 'See all',
+                  title: AppString.textFruits,
+                  text: AppString.textSeeAll,
                   fontWeight: FontWeight.w700,
-                  onClickButton: (){
+                  onClickButton: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -79,19 +81,19 @@ class _ExplorePageState extends State<ExplorePage> {
             Container(
                 margin: const EdgeInsets.only(left: 14, right: 8, bottom: 8),
                 child: TitleProducts(
-                  title: 'Dairy Products',
-                  text: 'See all',
+                  title: AppString.textDairyProducts,
+                  text: AppString.textSeeAll,
                   fontWeight: FontWeight.w700,
-                  onClickButton: (){},
+                  onClickButton: () {},
                 )),
             ExploreProducts(list: listDairyProducts),
             Container(
                 margin: const EdgeInsets.only(left: 14, right: 8, bottom: 8),
                 child: TitleProducts(
-                  title: 'Bakery Items',
-                  text: 'See all',
+                  title: AppString.textBakeryItems,
+                  text: AppString.textSeeAll,
                   fontWeight: FontWeight.w700,
-                  onClickButton: (){},
+                  onClickButton: () {},
                 )),
             ExploreProducts(list: listBakeryItems),
             const SizedBox(

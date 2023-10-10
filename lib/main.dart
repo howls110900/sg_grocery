@@ -5,11 +5,18 @@ import 'package:sg_grocery/screens/home/home_page.dart';
 //import 'package:sg_grocery/screens/login/login_page.dart';
 import 'package:sg_grocery/screens/main_page/main_page.dart';
 import 'package:sg_grocery/screens/splash/splash.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 //import 'package:sg_grocery/screens/login_page.dart';
 //import 'package:sg_grocery/screens/splash/splash.dart';
+SharedPreferences? prefs;
 
 void main() {
   runApp(const MyApp());
+  initSharedPreferences();
+}
+
+Future<void> initSharedPreferences() async  {
+  prefs = await SharedPreferences.getInstance();
 }
 
 class MyApp extends StatefulWidget {
@@ -22,7 +29,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: DetailsPage()//SGGrocery(),
+      home: SGGrocery()//SGGrocery(),
     );
   }
 }

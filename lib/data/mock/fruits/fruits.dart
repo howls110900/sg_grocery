@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:sg_grocery/base/app_colors/app_colors.dart';
+import 'package:sg_grocery/base/app_colors.dart';
 
 class Fruits {
   final String title;
@@ -32,7 +32,7 @@ List<Fruits> listFruits = [
       count: 1,
       icon: 'assets/svg/ic_heart_white.svg',
       buttonColor: AppColor
-          .colorGreen,
+          .color_85_171_96_1,
       textButton: 'Subscribe'
   ),
   Fruits(
@@ -43,7 +43,7 @@ List<Fruits> listFruits = [
       count: 1,
       icon: 'assets/svg/ic_heart_white.svg',
       buttonColor: AppColor
-      .colorGreen,
+      .color_85_171_96_1,
       textButton: 'Subscribe'),
   Fruits(
       title: 'Kiwifruit',
@@ -53,7 +53,7 @@ List<Fruits> listFruits = [
       count: 1,
       icon: 'assets/svg/ic_heart_white.svg',
       buttonColor: AppColor
-      .colorGreen,
+      .color_85_171_96_1,
       textButton: 'Subscribe'),
   Fruits(
       title: 'Grapes',
@@ -63,7 +63,7 @@ List<Fruits> listFruits = [
       count: 1,
       icon: 'assets/svg/ic_heart_white.svg',
       buttonColor: AppColor
-      .colorGreen,
+      .color_85_171_96_1,
       textButton: 'Subscribe'),
   Fruits(
       title: 'Watermelon',
@@ -73,7 +73,7 @@ List<Fruits> listFruits = [
       count: 1,
       icon: 'assets/svg/ic_heart_white.svg',
       buttonColor: AppColor
-      .colorGreen,
+      .color_85_171_96_1,
       textButton: 'Subscribe'),
   Fruits(
       title: 'Orange',
@@ -83,7 +83,7 @@ List<Fruits> listFruits = [
       count: 1,
       icon: 'assets/svg/ic_heart_white.svg',
       buttonColor: AppColor
-      .colorGreen,
+      .color_85_171_96_1,
       textButton: 'Subscribe'),
   Fruits(
       title: 'Guava',
@@ -93,7 +93,7 @@ List<Fruits> listFruits = [
       count: 1,
       icon: 'assets/svg/ic_heart_white.svg',
       buttonColor: AppColor
-      .colorGreen,
+      .color_85_171_96_1,
       textButton: 'Subscribe'),
   Fruits(
       title: 'Avocado',
@@ -103,6 +103,6 @@ List<Fruits> listFruits = [
       count: 1,
       icon: 'assets/svg/ic_heart_white.svg',
       buttonColor: AppColor
-      .colorGreen,
+      .color_85_171_96_1,
       textButton: 'Subscribe'),
 ];

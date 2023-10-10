@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:sg_grocery/base/app_images.dart';
+import 'package:sg_grocery/base/app_string.dart';
 import 'package:sg_grocery/widgets/divider_line/divider_line.dart';
 import 'package:sg_grocery/widgets/elevated_button/elevated_button.dart';
 import 'package:sg_grocery/widgets/field/field.dart';
-import '../../base/app_colors/app_colors.dart';
-import '../../base/app_fonts/app_fonts.dart';
+import '../../base/app_colors.dart';
+import '../../base/app_fonts.dart';
 import '../../widgets/outline_button/ouline_button.dart';
 //import '../../widgets/text_button/text_button.dart';
 import '../login/login_page.dart';
@@ -21,13 +23,13 @@ class _RegisterPage extends State<Register> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColor.backGroundWhite,
+        backgroundColor: AppColor.color_255_255_255_1,
         elevation: 0,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SvgPicture.asset(
-              'assets/svg/mini_logo.svg',
+              AppImage.icMiniLogo,
               width: 221,
               height: 53,
             ),
@@ -45,43 +47,43 @@ class _RegisterPage extends State<Register> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text(
-                    'Register',
+                    AppString.textRegister,
                     style: TextStyle(
                         fontSize: 24,
                         fontFamily: 'Montserrat',
-                        color: AppColor.colorGreen),
+                        color: AppColor.color_85_171_96_1),
                   ),
                 ],
               ),
               const AppField(
-                text: 'Your Name',
-                hintText: 'Enter Your Name',
+                text: AppString.textYourName ,
+                hintText: AppString.textEnterYourName,
               ),
               const AppField(
-                text: 'Email Id',
-                hintText: 'Enter Your Email Id',
+                text: AppString.textEmailId,
+                hintText: AppString.textEnterYourEmailId,
               ),
               const AppField(
-                text: 'Password',
-                hintText: 'Enter Your Password',
+                text: AppString.textPassword,
+                hintText: AppString.textEnterYourPassword,
               ),
               const AppField(
-                text: 'Confirm Password',
-                hintText: 'Confirm Your Password',
+                text: AppString.textConfirmPassword,
+                hintText: AppString.textConfirmYourPassword,
               ),
               const AppField(
-                text: 'Contact Number',
-                hintText: 'Enter Your Contact Number',
+                text: AppString.textContactNumber,
+                hintText: AppString.textEnterYourContactNumber,
               ),
               SizedBox(
                 height: 50,
                 width: 396,
                 child: ElevatedAppButton(
-                    textButton: 'Register',
+                    textButton: AppString.textRegister,
                   onClick: (){},
                 ),
               ),
-              const DividerLine(text: 'Or continue with'),
+              const DividerLine(text: AppString.textOrContinueWith),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -90,11 +92,11 @@ class _RegisterPage extends State<Register> {
                     width: 178,
                     child: OutlineAppButton(
                       svg: SvgPicture.asset(
-                        'assets/svg/ic_google.svg',
+                        AppImage.icGoogle,
                         height: 32,
                         width: 32,
                       ),
-                      textButton: "Google",
+                      textButton: AppString.textGoogle,
                     ),
                   ),
                   SizedBox(
@@ -102,11 +104,11 @@ class _RegisterPage extends State<Register> {
                     width: 189,
                     child: OutlineAppButton(
                       svg: SvgPicture.asset(
-                        'assets/svg/ic_facebook.svg',
+                        AppImage.icFacebook,
                         height: 32,
                         width: 32,
                       ),
-                      textButton: "Facebook",
+                      textButton: AppString.textFacebook,
                     ),
                   ),
                 ],
@@ -115,7 +117,7 @@ class _RegisterPage extends State<Register> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    'Already Have an Account?',
+                    AppString.textAlreadyHaveAnAccount,
                     style: AppFont.textHintStyle,
                   ),
                   TextButton(
@@ -123,7 +125,7 @@ class _RegisterPage extends State<Register> {
                       Navigator.pop(context);
                     },
                     child: const Text(
-                      'Login',
+                      AppString.textLogin,
                       style: AppFont.textRegisterStyle,
                     ),
                   ),

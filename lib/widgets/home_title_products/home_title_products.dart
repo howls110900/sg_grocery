@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sg_grocery/widgets/text_button/text_button.dart';
 
-import '../../base/app_colors/app_colors.dart';
-import '../../base/app_fonts/app_fonts.dart';
+import '../../base/app_colors.dart';
+import '../../base/app_fonts.dart';
 
 class TitleProducts extends StatelessWidget {
   final String title;
@@ -33,7 +33,7 @@ class TitleProducts extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 16,
                   fontFamily: 'Montserrat',
-                  color: AppColor.colorGreen,
+                  color: AppColor.color_85_171_96_1,
                   fontWeight: fontWeight,
                 )))
       ],

@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:sg_grocery/base/app_fonts/app_fonts.dart';
+import 'package:sg_grocery/base/app_fonts.dart';
 
-import '../../base/app_colors/app_colors.dart';
+import '../../base/app_colors.dart';
 
 class TextAppButton extends StatelessWidget{
   final fontWeight;
@@ -18,7 +18,7 @@ class TextAppButton extends StatelessWidget{
           style: TextStyle(
             fontSize: 16,
             fontFamily: 'Montserrat',
-            color: AppColor.colorGreen,
+            color: AppColor.color_85_171_96_1,
             fontWeight: fontWeight,
           )
     )

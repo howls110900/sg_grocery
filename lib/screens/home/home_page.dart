@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:sg_grocery/data/advertisment/advertisment.dart';
-import 'package:sg_grocery/data/products/products.dart';
-import '../../base/app_colors/app_colors.dart';
-import '../../base/app_fonts/app_fonts.dart';
-import '../../data/categories/categories.dart';
-import '../../data/deals_of_the_week/deals_of_the_week.dart';
-import '../../data/featured_item/featured_item.dart';
+import 'package:sg_grocery/base/app_images.dart';
+import 'package:sg_grocery/base/app_string.dart';
+import '../../base/app_colors.dart';
+import '../../base/app_fonts.dart';
+import '../../data/mock/advertisment/advertisment.dart';
+import '../../data/mock/categories/categories.dart';
+import '../../data/mock/deals_of_the_week/deals_of_the_week.dart';
+import '../../data/mock/featured_item/featured_item.dart';
+import '../../data/mock/products/products.dart';
 import '../../widgets/home_title_products/home_title_products.dart';
 import '../../widgets/text_button/text_button.dart';
 
@@ -26,7 +28,7 @@ class _HomePage extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: AppColor.backGroundWhite,
+        backgroundColor: AppColor.color_255_255_255_1,
         toolbarHeight: 75,
         elevation: 0,
         title: Column(children: [
@@ -38,7 +40,7 @@ class _HomePage extends State<HomePage> {
                     //padding: const EdgeInsets.only(left: 5),
                     height: 45,
                     decoration: BoxDecoration(
-                        color: AppColor.backGroundWhite,
+                        color: AppColor.color_255_255_255_1,
                         borderRadius: BorderRadius.circular(5),
                         boxShadow: [
                           BoxShadow(
@@ -49,15 +51,15 @@ class _HomePage extends State<HomePage> {
                     child: Row(
                       children: [
                         const SizedBox(width: 10),
-                        SvgPicture.asset('assets/svg/ic_search.svg'),
+                        SvgPicture.asset(AppImage.icSearch),
                         const SizedBox(width: 10),
                         const SizedBox(
                           width: 300,
                           child: TextField(
                             decoration: InputDecoration(
-                                hintText: 'Search products and brands',
+                                hintText: AppString.textSearchProductsAndBrands,
                                 hintStyle: TextStyle(
-                                    color: AppColor.hintTextSearchWhite),
+                                    color: AppColor.color_217_217_217_1),
                                 border: OutlineInputBorder(
                                     borderSide: BorderSide.none),
                                 contentPadding:
@@ -103,7 +105,7 @@ class _HomePage extends State<HomePage> {
         ),
         padding: const EdgeInsets.only(left: 25, right: 25),
         decoration: BoxDecoration(
-            color: AppColor.colorGreen,
+            color: AppColor.color_85_171_96_1,
             borderRadius: BorderRadius.circular(10)),
         child: PageView.builder(
             onPageChanged: (value) {
@@ -166,13 +168,13 @@ class _HomePage extends State<HomePage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Text(
-                'Top Categories',
+                AppString.textTopCategories,
                 style: AppFont.textExploreButton,
               ),
               TextAppButton(
-                text: 'Explore All',
+                text: AppString.textExploreAll,
                 fontWeight: FontWeight.w600,
-                onClickButton: (){},
+                onClickButton: () {},
               ),
             ],
           ),
@@ -206,7 +208,7 @@ class _HomePage extends State<HomePage> {
                     height: heightScreen / 9,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
-                        color: AppColor.colorBackGroundExplore),
+                        color: AppColor.color_242_252_244_1),
                   ),
                   Container(
                     margin: EdgeInsets.only(
@@ -216,7 +218,7 @@ class _HomePage extends State<HomePage> {
                         borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(5),
                             bottomRight: Radius.circular(5)),
-                        color: AppColor.colorGreen),
+                        color: AppColor.color_85_171_96_1),
                     child: Center(
                       child: Text(listCategories[index].title,
                           style: AppFont.CategoriesTitleStyle),
@@ -237,11 +239,11 @@ class _HomePage extends State<HomePage> {
   topProduct() {
     return Container(
         margin: const EdgeInsets.only(left: 16, right: 8, bottom: 10),
-        child:  TitleProducts(
-          title: 'Top Products',
-          text: 'Explore All',
+        child: TitleProducts(
+          title: AppString.textTopProducts,
+          text: AppString.textExploreAll,
           fontWeight: FontWeight.w600,
-          onClickButton: (){},
+          onClickButton: () {},
         ));
   }
 
@@ -259,7 +261,7 @@ class _HomePage extends State<HomePage> {
               margin: const EdgeInsets.only(right: 15),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5),
-                color: AppColor.colorBackGroundExplore,
+                color: AppColor.color_242_252_244_1,
                 //color: Colors.orangeAccent,
               ),
               width: 148,
@@ -308,7 +310,7 @@ class _HomePage extends State<HomePage> {
                       height: 36,
                       margin: const EdgeInsets.only(top: 12),
                       decoration: const BoxDecoration(
-                        color: AppColor.colorBottomNavigator,
+                        color: AppColor.color_85_171_96_1,
                         borderRadius: BorderRadius.only(
                             topRight: Radius.circular(20),
                             bottomRight: Radius.circular(20)),
@@ -339,7 +341,8 @@ class _HomePage extends State<HomePage> {
             Container(
               width: 396,
               height: 191,
-              child: const Image(image: AssetImage('assets/png/frame_banner.png')),
+              child:
+                  const Image(image: AssetImage(AppImage.frameBanner)),
             ),
             Container(
               margin: const EdgeInsets.only(left: 15, top: 20),
@@ -349,7 +352,7 @@ class _HomePage extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(
-                        'Get 25% Cashback',
+                        AppString.textBanner1,
                         style: AppFont.GetBannerTextStyle,
                       ),
                     ],
@@ -358,7 +361,7 @@ class _HomePage extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(
-                        'on all baby products',
+                        AppString.textBanner2,
                         style: AppFont.ProductsTextStyle,
                       ),
                     ],
@@ -372,20 +375,20 @@ class _HomePage extends State<HomePage> {
                 margin: const EdgeInsets.only(left: 18, top: 120),
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColor.colorGreen,
+                      backgroundColor: AppColor.color_85_171_96_1,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5),
                       ),
                     ),
                     onPressed: () {},
                     child: const Text(
-                      'Shop Now',
+                      AppString.textShopNow,
                       style: TextStyle(fontSize: 16, fontFamily: 'Montserrat'),
                     ))),
             Container(
               margin: const EdgeInsets.only(left: 220, top: 44),
               child: Image.asset(
-                'assets/png/product_banner.png',
+                AppImage.productBanner,
                 width: 158,
                 height: 130,
               ),
@@ -400,11 +403,11 @@ class _HomePage extends State<HomePage> {
           left: 16,
           right: 16,
         ),
-        child:  TitleProducts(
-          title: 'Deals Of The Week',
-          text: 'Explore All',
+        child: TitleProducts(
+          title: AppString.textDealsOfTheWeek,
+          text: AppString.textExploreAll,
           fontWeight: FontWeight.w600,
-          onClickButton: (){},
+          onClickButton: () {},
         ));
   }
 
@@ -425,7 +428,7 @@ class _HomePage extends State<HomePage> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5),
                 //color: Colors.orangeAccent
-                color: AppColor.colorBackGroundExplore,
+                color: AppColor.color_242_252_244_1,
               ),
               width: 148,
               height: 156,
@@ -459,10 +462,10 @@ class _HomePage extends State<HomePage> {
           right: 16,
         ),
         child: TitleProducts(
-          title: 'Featured Item',
-          text: 'Explore All',
+          title: AppString.textFeaturedItem,
+          text: AppString.textExploreAll,
           fontWeight: FontWeight.w600,
-          onClickButton: (){},
+          onClickButton: () {},
         ));
   }
 
@@ -532,6 +535,6 @@ containerItem(int checkIndex, int i) {
     width: i == checkIndex ? 16 : 12,
     decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(70),
-        color: i == checkIndex ? AppColor.colorGreen : AppColor.hintTextButton),
+        color: i == checkIndex ? AppColor.color_85_171_96_1 : AppColor.color_133_143_173_1),
   );
 }

@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:sg_grocery/base/app_images.dart';
+import 'package:sg_grocery/data/prefs/prefs.dart';
 import 'package:sg_grocery/screens/main_page/main_page.dart';
 import 'package:sg_grocery/screens/register/register.dart';
 import 'package:sg_grocery/widgets/divider_line/divider_line.dart';
-import '../../base/app_colors/app_colors.dart';
-import '../../base/app_fonts/app_fonts.dart';
+import '../../base/app_colors.dart';
+import '../../base/app_fonts.dart';
+import '../../base/app_string.dart';
 import '../../widgets/elevated_button/elevated_button.dart';
 import '../../widgets/field/field.dart';
 import '../../widgets/outline_button/ouline_button.dart';
-import '../home/home_page.dart';
-//import '../../widgets/text_button/text_button.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -19,11 +20,12 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColor.backGroundWhite,
+        backgroundColor: AppColor.color_255_255_255_1,
         elevation: 0,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -31,7 +33,7 @@ class _LoginState extends State<Login> {
             Row(
               children: [
                 SvgPicture.asset(
-                  'assets/svg/mini_logo.svg',
+                  AppImage.icMiniLogo,
                   width: 221,
                   height: 53,
                 ),
@@ -48,7 +50,7 @@ class _LoginState extends State<Login> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             SvgPicture.asset(
-              'assets/svg/Illustrator.svg',
+              AppImage.illustrator,
               height: 157,
               width: 152,
             ),
@@ -56,22 +58,23 @@ class _LoginState extends State<Login> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
-                  'Login',
+                  AppString.textLogin,
                   style: TextStyle(
                       fontSize: 24,
                       fontFamily: 'Montserrat',
-                      color: AppColor.colorGreen),
+                      color: AppColor.color_85_171_96_1),
                 ),
               ],
             ),
-            const AppField(text: 'Email Id', hintText: 'Enter Your Email Id'),
-            const AppField(text: 'Password', hintText: 'Enter Your Password'),
+             const AppField(text: AppString.textEmailId, hintText: AppString.textEnterYourEmailId ),
+             const AppField(text: AppString.textPassword, hintText: AppString.textEnterYourPassword ),
             SizedBox(
               height: 50,
               width: 396,
               child: ElevatedAppButton(
-                textButton: 'Login',
+                textButton: AppString.textLogin,
                 onClick: () {
+                  setLogin(true);
                   Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -79,7 +82,7 @@ class _LoginState extends State<Login> {
                 },
               ),
             ),
-            const DividerLine(text: 'Or continue with'),
+            const DividerLine(text: AppString.textOrContinueWith),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -88,11 +91,11 @@ class _LoginState extends State<Login> {
                   width: 178,
                   child: OutlineAppButton(
                     svg: SvgPicture.asset(
-                      'assets/svg/ic_google.svg',
+                      AppImage.icGoogle,
                       height: 32,
                       width: 32,
                     ),
-                    textButton: "Google",
+                    textButton: AppString.textGoogle,
                   ),
                 ),
                 SizedBox(
@@ -100,11 +103,11 @@ class _LoginState extends State<Login> {
                   width: 189,
                   child: OutlineAppButton(
                     svg: SvgPicture.asset(
-                      'assets/svg/ic_facebook.svg',
+                      AppImage.icFacebook,
                       height: 32,
                       width: 32,
                     ),
-                    textButton: "Facebook",
+                    textButton: AppString.textFacebook,
                   ),
                 )
               ],
@@ -113,7 +116,7 @@ class _LoginState extends State<Login> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  'Don’t You Have an Account?',
+                  AppString.textDontYoutHaveAnAccount,
                   style: AppFont.textHintStyle,
                 ),
                 TextButton(
@@ -124,7 +127,7 @@ class _LoginState extends State<Login> {
                             builder: (context) => const Register()));
                   },
                   child: const Text(
-                    'Register',
+                    AppString.textRegister,
                     style: AppFont.textRegisterStyle,
                   ),
                 ),
